@@ -214,47 +214,40 @@ export default function TechSpecsSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT — TABLE FORMAT SPECIFICATIONS */}
+          {/* RIGHT — TABLE FORMAT LAYOUT */}
           <motion.div variants={itemVariants} className="relative">
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden h-[380px] flex flex-col">
-              {/* Header with Gradient */}
+              {/* Simple Clean Header */}
               <motion.div
-                className="bg-gradient-to-r from-blue-600 to-blue-700 p-4"
-                initial={{ opacity: 0, y: -20 }}
+                className="bg-white p-6 border-b border-gray-200"
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-xl font-bold text-white text-center">
-                  Specification Details
+                <h3 className="text-2xl font-bold text-gray-900 text-center">
+                  Technical Specifications
                 </h3>
               </motion.div>
 
-              {/* Table Format Specifications */}
+              {/* Specifications Content - Table Format */}
               <div className="p-6 flex-1 overflow-y-auto">
-                <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                   {specifications.map((item, i) => (
                     <motion.div
                       key={i}
-                      className="group cursor-pointer"
-                      initial={{ opacity: 0, x: 20 }}
+                      className="group"
+                      initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: i * 0.08 }}
-                      whileHover={{ x: 4 }}
                     >
-                      {/* Specification Title with Bullet */}
-                      <div className="flex items-start gap-3 mb-2">
-                        <motion.div
-                          className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2"
-                          whileHover={{ scale: 1.3 }}
-                        />
-                        <h4 className="font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 text-lg">
-                          {item.spec}
-                        </h4>
-                      </div>
+                      {/* Specification Title - Bold and Clean */}
+                      <h4 className="font-bold text-gray-900 text-base mb-1">
+                        {item.spec}
+                      </h4>
 
-                      {/* Specification Detail */}
+                      {/* Specification Detail - Regular weight */}
                       <motion.p
-                        className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 text-base ml-5 leading-relaxed"
+                        className="text-gray-600 text-sm leading-relaxed"
                         whileHover={{ x: 2 }}
                       >
                         {item.detail}
@@ -264,26 +257,15 @@ export default function TechSpecsSection() {
                 </div>
               </div>
 
-              {/* Compact Footer */}
+              {/* Simple Footer */}
               <motion.div
-                className="bg-gray-50 px-4 py-3 border-t border-gray-200"
+                className="bg-gray-50 px-6 py-4 border-t border-gray-200"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                <div className="flex items-center justify-center text-xs text-gray-500">
-                  <svg
-                    className="w-3 h-3 mr-1 text-blue-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  All specifications subject to technical updates
+                <div className="text-center text-sm text-gray-500">
+                  Comprehensive hardware specifications
                 </div>
               </motion.div>
             </div>
