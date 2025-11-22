@@ -70,16 +70,34 @@ export default function TechSpecsSection() {
   };
 
   const specifications = [
-    { spec: "Microcontroller", detail: "ARM Cortex-M4 @ 120MHz" },
-    { spec: "Memory", detail: "512KB Flash + 192KB RAM" },
-    { spec: "Sensors", detail: "Ultrasonic, IR, Temp, Humidity" },
-    { spec: "Motor Ports", detail: "4× DC Motors with PWM" },
-    { spec: "Programming", detail: "Block IDE, Python, C++" },
-    { spec: "Connectivity", detail: "Wi-Fi, Bluetooth LE" },
+    {
+      spec: "Microcontroller",
+      detail: "ARM Cortex-M4 @ 120MHz",
+    },
+    {
+      spec: "Memory",
+      detail: "512KB Flash + 192KB RAM",
+    },
+    {
+      spec: "Sensors",
+      detail: "Ultrasonic, Infrared, Temperature, Humidity",
+    },
+    {
+      spec: "Motor Ports",
+      detail: "4× DC Motor Ports with PWM Control",
+    },
+    {
+      spec: "Programming",
+      detail: "Block-based IDE, Python, C++",
+    },
+    {
+      spec: "Connectivity",
+      detail: "Wi-Fi, Bluetooth Low Energy",
+    },
   ];
 
   return (
-    <div className="relative py-20 md:py-28 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 overflow-hidden">
+    <div className="relative py-16 md:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400/10 rounded-full blur-3xl"></div>
@@ -91,24 +109,23 @@ export default function TechSpecsSection() {
         animate="visible"
       >
         {/* Section Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <motion.div className="text-center mb-12" variants={itemVariants}>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Technical{" "}
             <span className="bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
               Specifications
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Advanced robotics platform with cutting-edge technology and premium
-            performance
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Advanced robotics platform with cutting-edge technology
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT — ENHANCED IMAGE CAROUSEL */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          {/* LEFT — COMPACT IMAGE CAROUSEL */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-white p-4 border border-gray-200">
-              <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden">
+            <div className="relative w-full h-[380px] overflow-hidden rounded-xl shadow-lg bg-white border border-gray-200">
+              <div className="relative h-full rounded-lg overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={index}
@@ -118,20 +135,20 @@ export default function TechSpecsSection() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-full h-full object-contain rounded-lg p-2"
                   />
                 </AnimatePresence>
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent rounded-lg"></div>
               </div>
 
               {/* Enhanced Indicators */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                 {carouselImages.map((_, i) => (
                   <motion.button
                     key={i}
-                    className={`w-3 h-3 rounded-full transition-all ${
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
                       i === index
                         ? "bg-gradient-to-r from-orange-500 to-red-500 scale-110"
                         : "bg-gray-300 hover:bg-gray-400"
@@ -144,9 +161,9 @@ export default function TechSpecsSection() {
               </div>
 
               {/* Navigation Arrows */}
-              <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4">
+              <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-3">
                 <motion.button
-                  className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center hover:bg-white transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() =>
@@ -158,7 +175,7 @@ export default function TechSpecsSection() {
                   }
                 >
                   <svg
-                    className="w-5 h-5 text-gray-700"
+                    className="w-4 h-4 text-gray-700"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -172,7 +189,7 @@ export default function TechSpecsSection() {
                   </svg>
                 </motion.button>
                 <motion.button
-                  className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full shadow-md flex items-center justify-center hover:bg-white transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() =>
@@ -180,7 +197,7 @@ export default function TechSpecsSection() {
                   }
                 >
                   <svg
-                    className="w-5 h-5 text-gray-700"
+                    className="w-4 h-4 text-gray-700"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -197,70 +214,66 @@ export default function TechSpecsSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT — MODERN SPECIFICATIONS CARD */}
+          {/* RIGHT — TABLE FORMAT SPECIFICATIONS */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden h-[380px] flex flex-col">
               {/* Header with Gradient */}
               <motion.div
-                className="bg-gradient-to-r from-blue-600 to-blue-700 p-6"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 p-4"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-bold text-white text-center">
-                  Technical Details
+                <h3 className="text-xl font-bold text-white text-center">
+                  Specification Details
                 </h3>
-                <p className="text-blue-100 text-center mt-2">
-                  Comprehensive hardware specifications
-                </p>
               </motion.div>
 
-              {/* Specifications List */}
-              <div className="p-6 space-y-4">
-                {specifications.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex items-start justify-between p-4 rounded-xl border border-gray-100 hover:border-orange-200 hover:bg-orange-50 transition-all duration-300 group cursor-pointer"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    whileHover={{
-                      scale: 1.02,
-                      borderColor: "#fdba74",
-                    }}
-                  >
-                    <div className="flex-1">
-                      <motion.h4
-                        className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 text-lg"
-                        whileHover={{ x: 2 }}
-                      >
-                        {item.spec}
-                      </motion.h4>
+              {/* Table Format Specifications */}
+              <div className="p-6 flex-1 overflow-y-auto">
+                <div className="space-y-6">
+                  {specifications.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      className="group cursor-pointer"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: i * 0.08 }}
+                      whileHover={{ x: 4 }}
+                    >
+                      {/* Specification Title with Bullet */}
+                      <div className="flex items-start gap-3 mb-2">
+                        <motion.div
+                          className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2"
+                          whileHover={{ scale: 1.3 }}
+                        />
+                        <h4 className="font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 text-lg">
+                          {item.spec}
+                        </h4>
+                      </div>
+
+                      {/* Specification Detail */}
                       <motion.p
-                        className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 mt-1"
+                        className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300 text-base ml-5 leading-relaxed"
                         whileHover={{ x: 2 }}
                       >
                         {item.detail}
                       </motion.p>
-                    </div>
-                    <motion.div
-                      className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      whileHover={{ scale: 1.5 }}
-                    />
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
-              {/* Footer */}
+              {/* Compact Footer */}
               <motion.div
-                className="bg-gray-50 px-6 py-4 border-t border-gray-200"
+                className="bg-gray-50 px-4 py-3 border-t border-gray-200"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.6 }}
               >
-                <div className="flex items-center justify-center text-sm text-gray-500">
+                <div className="flex items-center justify-center text-xs text-gray-500">
                   <svg
-                    className="w-4 h-4 mr-2 text-blue-500"
+                    className="w-3 h-3 mr-1 text-blue-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -278,12 +291,12 @@ export default function TechSpecsSection() {
         </div>
       </motion.div>
 
-      {/* Professional Wave Divider */}
+      {/* Compact Wave Divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
         <svg
-          viewBox="0 0 1200 120"
+          viewBox="0 0 1200 80"
           preserveAspectRatio="none"
-          className="relative block w-full h-20 md:h-24"
+          className="relative block w-full h-16 md:h-20"
         >
           <path
             d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"

@@ -16,12 +16,12 @@ export default function App() {
       <HeroSection />
       <ShowcaseSection />
       <FeaturesSection />
+      <TechSpecsSection />
       <ProductsSection />
       <LatestNewsSection />
       <SuccessStoriesSection />
       <DownloadPDFSection />
       <Footer />
-      <TechSpecsSection />
     </>
   );
 }
