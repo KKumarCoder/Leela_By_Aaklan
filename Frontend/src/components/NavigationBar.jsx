@@ -8,7 +8,7 @@ const Navigation = () => {
     { label: "Hardware", href: "#hardware" },
     { label: "Software", href: "#software" },
     { label: "Documentation", href: "#documentation" },
-    { label: "News", href: "#news" },
+    { label: "News", href: "news" },
     { label: "About", href: "#about" },
     { label: "Blog", href: "#blog" },
   ];
