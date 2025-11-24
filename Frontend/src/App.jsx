@@ -39,6 +39,7 @@ import Documentation from "./pages/Documentation.jsx";
 import News from "./pages/News.jsx";
 import About from "./pages/About.jsx";
 import Blog from "./pages/Blog.jsx";
+import DocumentationDetails from "./pages/Documentation_details.jsx";
 
 export default function App() {
   return (
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/hardware" element={<Hardware />} />
           <Route path="/software" element={<Software />} />
           <Route path="/documentation" element={<Documentation />} />
+          <Route path="/documentation/:id" element={<DocumentationDetails />} />
           <Route path="/news" element={<News />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />

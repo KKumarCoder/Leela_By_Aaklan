@@ -36,7 +36,7 @@ const ShowcaseSection = () => {
   return (
     <section
       id="hardware"
-      className="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-b from-white to-gray-50"
+      className="py-2 lg:py-4 relative overflow-hidden bg-gradient-to-b from-white to-gray-50"
     >
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl -z-10 opacity-50" />

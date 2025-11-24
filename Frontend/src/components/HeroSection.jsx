@@ -111,82 +111,9 @@ const HeroSection = () => {
     },
   ];
 
-  const bubbles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 80 + 30,
-    duration: Math.random() * 20 + 15,
-    delay: Math.random() * 5,
-  }));
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
-      {/* Dynamic Gradient Orbs */}
-      <motion.div
-        className="absolute top-20 right-20 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          x: [0, 50, 0],
-          y: [0, -30, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-gradient-to-br from-blue-500/20 to-orange-500/20 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.4, 1],
-          x: [0, -40, 0],
-          y: [0, 40, 0],
-          rotate: [0, -180, -360],
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-br from-red-500/15 to-blue-500/15 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.5, 1],
-          rotate: [0, 360, 720],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Floating Bubbles */}
-      {bubbles.map((bubble) => (
-        <motion.div
-          key={bubble.id}
-          className="absolute rounded-full"
-          style={{
-            left: `${bubble.x}%`,
-            top: `${bubble.y}%`,
-            width: bubble.size,
-            height: bubble.size,
-            background: `radial-gradient(circle, rgba(${
-              Math.random() > 0.5
-                ? "249, 115, 22"
-                : Math.random() > 0.5
-                ? "239, 68, 68"
-                : "59, 130, 246"
-            }, 0.2) 0%, transparent 70%)`,
-          }}
-          animate={{
-            y: [0, -60, 0],
-            x: [0, Math.random() * 30 - 15, 0],
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: bubble.duration,
-            repeat: Infinity,
-            delay: bubble.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {/* Removed gradient orbs and floating bubbles — plain white background now */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -336,7 +263,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-red-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/50"
+              className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-red-200 rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/50"
               animate={{
                 y: [0, 20, 0],
                 rotate: [0, -360],
@@ -391,7 +318,7 @@ const HeroSection = () => {
                   >
                     {/* Glowing Border Effect */}
                     <motion.div
-                      className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-200 via-red-500 to-blue-500 opacity-25 blur-2xl"
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-100 via-red-500 to-blue-500 opacity-5 blur-2xl"
                       animate={{
                         rotate: [0, 360],
                       }}

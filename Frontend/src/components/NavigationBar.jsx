@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Target, X } from "lucide-react";
+import { Link } from "react-router-dom"; // added Link
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
     { label: "Hardware", href: "hardware" },
-    { label: "Software", href: "#software" },
-    { label: "Documentation", href: "#documentation" },
+    { label: "Software", href: "software" },
+    { label: "Documentation", href: "documentation" },
     { label: "News", href: "news" },
     { label: "About", href: "#about" },
     { label: "Blog", href: "#blog" },
@@ -19,15 +20,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F262bb9f8f26f474a9e5258cbab1b9d6d%2Faee73f35761a4bc8a9a44e7601160b49?format=webp&width=200"
-              alt="LEELA by Aaklan"
-              className="h-20 w-auto sm:h-24 lg:h-28 transition-transform duration-300 hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.src =
-                  "https://via.placeholder.com/150x40/3B82F6/FFFFFF?text=LEELA+Arduino";
-              }}
-            />
+            <Link to="/">
+              {" "}
+              {/* logo now links to home */}
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F262bb9f8f26f474a9e5258cbab1b9d6d%2Faee73f35761a4bc8a9a44e7601160b49?format=webp&width=200"
+                alt="LEELA by Aaklan"
+                className="h-20 w-auto sm:h-24 lg:h-28 transition-transform duration-300 hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://via.placeholder.com/150x40/3B82F6/FFFFFF?text=LEELA+Arduino";
+                }}
+              />
+            </Link>
           </div>
 
           {/* Desktop Menu */}

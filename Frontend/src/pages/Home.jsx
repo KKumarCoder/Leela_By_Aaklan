@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection.jsx";
 import HeroCarousel from "../components/HeroCarousel.jsx";
 import FeaturesSection from "../components/FeaturesSection.jsx";
 import ProductsSection from "../components/ProductsSection.jsx";
-import SolutionsSection from "../components/SolutionsSection.jsx";
+
 import ShowcaseSection from "../components/ShowcaseSection.jsx";
 import LatestNewsSection from "../components/LatestNewsSection.jsx";
 import SuccessStoriesSection from "../components/SuccessStoriesSection.jsx";
@@ -18,12 +18,13 @@ export default function Home() {
       <HeroCarousel />
       <FeaturesSection />
       <ProductsSection />
-      <SolutionsSection />
+
       <ShowcaseSection />
       <LatestNewsSection />
-      <SuccessStoriesSection />
-      <TechSpecsSection />
       <WhatIsLeelaSection />
+
+      <TechSpecsSection />
+      <SuccessStoriesSection />
       <DownloadPDFSection />
     </>
   );

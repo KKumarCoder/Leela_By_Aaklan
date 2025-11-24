@@ -108,9 +108,9 @@ export default function FeaturesSectionUltraPremium() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-4 sm:px-8 lg:px-16 bg-gradient-to-b from-white to-[#EEF2FF]"
+      className="  py-4 px-4 sm:px-8 lg:px-16 bg-gradient-to-b from-white to-[#EEF2FF]"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xlmx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
