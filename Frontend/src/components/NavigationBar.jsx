@@ -5,7 +5,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Hardware", href: "#hardware" },
+    { label: "Hardware", href: "hardware" },
     { label: "Software", href: "#software" },
     { label: "Documentation", href: "#documentation" },
     { label: "News", href: "news" },
