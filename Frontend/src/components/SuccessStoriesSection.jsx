@@ -1,102 +1,61 @@
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
 const stories = [
   {
     id: 1,
     headline: "How Schools Transformed STEM With Leela",
-    subtext:
-      "Real stories from classrooms adopting our robotics learning system.",
-    caseStudy:
-      "A leading school in Delhi increased student engagement by 85% after integrating Leela boards into their curriculum.",
-    bgGradient: "from-[#E98F0B]/10 to-[#E22213]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1741354706-23c6592450ef71869726c2743d757f4f.png",
+    subtext: "Real stories from classrooms adopting our robotics learning system.",
+    caseStudy: "A leading school in Delhi increased student engagement by 85% after integrating Leela boards into their curriculum.",
+    category: "Education",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1741354706-23c6592450ef71869726c2743d757f4f.png",
   },
   {
     id: 2,
     headline: "Industry Innovation Through Robotics",
     subtext: "How companies are leveraging Leela for advanced R&D projects.",
-    caseStudy:
-      "A robotics startup accelerated their prototyping timeline by 60% using Leela's integrated platform.",
-    bgGradient: "from-[#0F2348]/10 to-[#E98F0B]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1741354743-d482bd26c8bb05e9582a1b4927fd956c.jpeg",
+    caseStudy: "A robotics startup accelerated their prototyping timeline by 60% using Leela's integrated platform.",
+    category: "Industry",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1741354743-d482bd26c8bb05e9582a1b4927fd956c.jpeg",
   },
   {
     id: 3,
     headline: "Community Makers Building Together",
     subtext: "Creators around the world share their Leela projects.",
-    caseStudy:
-      "An open community has created over 500+ innovative projects ranging from automated systems to robotic art installations.",
-    bgGradient: "from-[#E22213]/10 to-[#0F2348]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547498-548aa5d5935bd5928845e1c3bd13f46a.jpeg",
+    caseStudy: "An open community has created over 500+ innovative projects ranging from automated systems to robotic art installations.",
+    category: "Community",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547498-548aa5d5935bd5928845e1c3bd13f46a.jpeg",
   },
   {
     id: 4,
     headline: "Next-Gen Robotics in Classrooms",
     subtext: "Empowering students to learn by doing.",
-    caseStudy:
-      "Schools integrating Leela saw a 40% improvement in STEM exam scores.",
-    bgGradient: "from-[#0F2348]/10 to-[#E22213]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742551590-image.png",
+    caseStudy: "Schools integrating Leela saw a 40% improvement in STEM exam scores.",
+    category: "Education",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742551590-image.png",
   },
   {
     id: 5,
     headline: "Global Robotics Competitions",
     subtext: "Students building and competing worldwide.",
-    caseStudy:
-      "Teams using Leela won multiple awards at international robotics contests.",
-    bgGradient: "from-[#E98F0B]/10 to-[#0F2348]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547772-43588221d8e652f925e71b5b347790ab.jpeg",
+    caseStudy: "Teams using Leela won multiple awards at international robotics contests.",
+    category: "Competition",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547772-43588221d8e652f925e71b5b347790ab.jpeg",
   },
   {
     id: 6,
     headline: "Corporate Robotics Labs",
     subtext: "Companies accelerating innovation with Leela boards.",
-    caseStudy:
-      "R&D teams reduced prototyping time by 50% with Leela's integrated solutions.",
-    bgGradient: "from-[#E22213]/10 to-[#E98F0B]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547971-cd7a4c4170727bda365ee13b563802f8.jpeg",
-  },
-  {
-    id: 7,
-    headline: "Maker Communities Thrive",
-    subtext: "Creators collaborate to innovate new solutions.",
-    caseStudy:
-      "Over 500+ projects developed globally, from robotic art to automated tools.",
-    bgGradient: "from-[#0F2348]/10 to-[#E98F0B]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742548029-feb56abe7e18e49ad192b6468f5c0ded.png",
-  },
-  {
-    id: 8,
-    headline: "Innovative Learning Platforms",
-    subtext: "Bringing AI and robotics together for better education.",
-    caseStudy:
-      "Students built AI-driven robots that improved learning engagement.",
-    bgGradient: "from-[#E98F0B]/10 to-[#E22213]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742551693-image-2.png",
-  },
-  {
-    id: 9,
-    headline: "STEM Outreach Programs",
-    subtext: "Expanding STEM education beyond classrooms.",
-    caseStudy:
-      "Leela programs reached over 2,000 students across rural and urban areas.",
-    bgGradient: "from-[#E22213]/10 to-[#0F2348]/10",
-    image:
-      "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742548154-0ab822dbcb1335e692968bd08564a972.jpeg",
+    caseStudy: "R&D teams reduced prototyping time by 50% with Leela's integrated solutions.",
+    category: "Industry",
+    image: "https://www.arduino.cc/cdn-cgi/image/width=640,quality=60,format=auto/https://www.datocms-assets.com/150482/1742547971-cd7a4c4170727bda365ee13b563802f8.jpeg",
   },
 ];
 
 export default function SuccessStoriesSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
   const sectionRef = useRef(null);
   const carouselRef = useRef(null);
   const autoPlayRef = useRef(null);
@@ -109,192 +68,261 @@ export default function SuccessStoriesSection() {
           setIsVisible(true);
         }
       },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
-  // Duplicate first 3 and last 3 items for infinite loop
-  const loopStories = [
-    ...stories.slice(-3),
-    ...stories,
-    ...stories.slice(0, 3),
-  ];
-
-  // Initialize scroll position and auto-play
+  // Auto-play functionality
   useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
+    if (!isPlaying) return;
 
-    // Scroll to first original item
-    const firstOriginal = carousel.children[3];
-    if (firstOriginal) {
-      carousel.scrollLeft = firstOriginal.offsetLeft;
-    }
-
-    // Auto-play function
-    const startAutoPlay = () => {
-      autoPlayRef.current = setInterval(() => {
-        if (!carouselRef.current) return;
-        carouselRef.current.scrollBy({ left: 2, behavior: "smooth" });
-      }, 16);
-    };
-
-    startAutoPlay();
+    autoPlayRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % stories.length);
+    }, 4000);
 
     return () => {
       if (autoPlayRef.current) {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, []);
+  }, [isPlaying]);
 
-  const scrollLeft = () => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-    carousel.scrollBy({ left: -400, behavior: "smooth" });
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % stories.length);
   };
 
-  const scrollRight = () => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-    carousel.scrollBy({ left: 400, behavior: "smooth" });
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + stories.length) % stories.length);
   };
 
-  const handleScroll = () => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const firstChild = carousel.children[0];
-    if (!firstChild) return;
-
-    const itemWidth = firstChild.offsetWidth + 24; // gap-6
-
-    if (carousel.scrollLeft <= 0) {
-      carousel.scrollLeft = itemWidth * stories.length;
-    } else if (carousel.scrollLeft >= itemWidth * (stories.length + 3)) {
-      carousel.scrollLeft = itemWidth * 3;
-    }
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
   };
 
-  const handleMouseEnter = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      autoPlayRef.current = null;
-    }
+  const toggleAutoPlay = () => {
+    setIsPlaying(!isPlaying);
   };
 
-  const handleMouseLeave = () => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    // Restart autoplay
-    if (!autoPlayRef.current) {
-      autoPlayRef.current = setInterval(() => {
-        if (!carouselRef.current) return;
-        carouselRef.current.scrollBy({ left: 2, behavior: "smooth" });
-      }, 16);
+  const getCategoryColor = (category) => {
+    switch (category) {
+      case "Education":
+        return "bg-blue-500 text-white";
+      case "Industry":
+        return "bg-orange-500 text-white";
+      case "Community":
+        return "bg-red-500 text-white";
+      default:
+        return "bg-gray-500 text-white";
     }
   };
 
   return (
     <section
-      className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
+      className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-orange-50"
       ref={sectionRef}
     >
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div
           className={`text-center mb-12 md:mb-16 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F2348] mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-orange-200 shadow-sm mb-6">
+            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">
+              Real Impact Stories
+            </span>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-transparent bg-gradient-to-r from-blue-600 via-orange-500 to-red-600 bg-clip-text mb-4">
             Success Stories
           </h2>
-          <p className="text-lg text-[#0F2348]/70 max-w-2xl mx-auto">
-            See how organizations and communities are transforming education and
-            innovation with Leela
+          
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-red-500 mx-auto mb-6 rounded-full"></div>
+          
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Discover how organizations and communities are transforming education and innovation with Leela
           </p>
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="hidden md:flex absolute top-1/2 transform -translate-y-1/2 left-0 z-10">
-          <button
-            onClick={scrollLeft}
-            className="p-2 bg-white/70 backdrop-blur-md rounded-full shadow hover:bg-white transition"
-          >
-            <ChevronLeft className="w-6 h-6 text-[#0F2348]" />
-          </button>
-        </div>
-        <div className="hidden md:flex absolute top-1/2 transform -translate-y-1/2 right-0 z-10">
-          <button
-            onClick={scrollRight}
-            className="p-2 bg-white/70 backdrop-blur-md rounded-full shadow hover:bg-white transition"
-          >
-            <ChevronRight className="w-6 h-6 text-[#0F2348]" />
-          </button>
-        </div>
-
-        {/* Carousel */}
-        <div
-          ref={carouselRef}
-          onScroll={handleScroll}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-[#E98F0B]/40 scrollbar-track-gray-100 snap-x snap-mandatory scroll-smooth"
-        >
-          {loopStories.map((story, index) => (
-            <div
-              key={`${story.id}-${index}`}
-              className={`flex-none w-72 sm:w-80 md:w-96 bg-gradient-to-br ${
-                story.bgGradient
-              } border border-[#0F2348]/10 rounded-xl p-6 sm:p-8 hover:border-[#E98F0B] hover:shadow-lg transition-all duration-700 snap-start ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-              style={{
-                transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
-              }}
+        {/* Main Carousel */}
+        <div className="relative bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+          {/* Navigation Controls */}
+          <div className="absolute top-6 right-6 z-20 flex items-center gap-2">
+            <button
+              onClick={toggleAutoPlay}
+              className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:scale-110 transition-all duration-300"
             >
-              <div className="w-full h-48 sm:h-56 rounded-lg mb-6 overflow-hidden flex items-center justify-center">
-                <img
-                  src={story.image}
-                  alt={story.headline}
-                  className="object-cover w-full h-full rounded-lg"
-                />
+              {isPlaying ? (
+                <Pause className="w-5 h-5 text-orange-600" />
+              ) : (
+                <Play className="w-5 h-5 text-orange-600" />
+              )}
+            </button>
+            
+            <button
+              onClick={prevSlide}
+              className="p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:scale-110 hover:bg-orange-50 transition-all duration-300 group"
+            >
+              <ChevronLeft className="w-6 h-6 text-orange-600 group-hover:text-red-600" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:scale-110 hover:bg-orange-50 transition-all duration-300 group"
+            >
+              <ChevronRight className="w-6 h-6 text-orange-600 group-hover:text-red-600" />
+            </button>
+          </div>
+
+          {/* Carousel Content */}
+          <div className="relative h-[500px] md:h-[600px]">
+            {stories.map((story, index) => (
+              <div
+                key={story.id}
+                className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                  index === currentIndex
+                    ? "opacity-100 translate-x-0"
+                    : index < currentIndex
+                    ? "opacity-0 -translate-x-10"
+                    : "opacity-0 translate-x-10"
+                }`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+                  {/* Image Section */}
+                  <div className="relative h-64 lg:h-full">
+                    <img
+                      src={story.image}
+                      alt={story.headline}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-orange-500/20"></div>
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-6 left-6">
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${getCategoryColor(story.category)}`}>
+                        {story.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16 bg-gradient-to-br from-white to-blue-50/30">
+                    <div className="max-w-lg">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight">
+                        {story.headline}
+                      </h3>
+                      
+                      <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                        {story.subtext}
+                      </p>
+
+                      {/* Case Study Highlight */}
+                      <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-500 p-6 rounded-r-lg mb-8">
+                        <p className="text-gray-800 font-medium leading-relaxed">
+                          {story.caseStudy}
+                        </p>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        Read Full Story
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0F2348] mb-2">
-                {story.headline}
-              </h3>
-              <p className="text-[#0F2348]/60 text-sm mb-4">{story.subtext}</p>
+          {/* Progress Bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
+            <div
+              className="h-full bg-gradient-to-r from-blue-500 to-red-500 transition-all duration-1000 ease-out"
+              style={{
+                width: `${((currentIndex + 1) / stories.length) * 100}%`,
+              }}
+            />
+          </div>
+        </div>
 
-              <div className="bg-white/60 backdrop-blur-sm p-4 rounded-lg mb-4 border-l-4 border-[#E98F0B]">
-                <p className="text-[#0F2348] text-sm font-medium">
-                  {story.caseStudy}
-                </p>
-              </div>
-
-              <button className="flex items-center gap-2 text-[#E22213] font-semibold hover:text-[#0F2348] transition-colors duration-300 group">
-                Read Full Story
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+        {/* Dot Indicators */}
+        <div className="flex justify-center items-center gap-3 mt-8">
+          {stories.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-gradient-to-r from-orange-500 to-red-500 scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
           ))}
+        </div>
+
+        {/* Thumbnail Carousel */}
+        <div className="mt-12">
+          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-gray-100">
+            {stories.map((story, index) => (
+              <button
+                key={story.id}
+                onClick={() => goToSlide(index)}
+                className={`flex-none w-48 h-32 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                  index === currentIndex
+                    ? "border-orange-500 shadow-lg scale-105"
+                    : "border-gray-200 hover:border-orange-300"
+                }`}
+              >
+                <div className="relative w-full h-full">
+                  <img
+                    src={story.image}
+                    alt={story.headline}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className={`absolute inset-0 ${
+                    index === currentIndex 
+                      ? "bg-orange-500/20" 
+                      : "bg-black/20 hover:bg-orange-500/30"
+                  } transition-all duration-300`} />
+                  
+                  {/* Thumbnail Title */}
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <p className="text-white text-xs font-bold text-left truncate drop-shadow-sm">
+                      {story.headline}
+                    </p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="p-6 bg-white rounded-2xl shadow-lg border border-blue-100">
+            <div className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">85%</div>
+            <div className="text-sm text-gray-600 font-semibold">Engagement Increase</div>
+          </div>
+          <div className="p-6 bg-white rounded-2xl shadow-lg border border-orange-100">
+            <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">60%</div>
+            <div className="text-sm text-gray-600 font-semibold">Faster Prototyping</div>
+          </div>
+          <div className="p-6 bg-white rounded-2xl shadow-lg border border-red-100">
+            <div className="text-2xl font-black bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">500+</div>
+            <div className="text-sm text-gray-600 font-semibold">Projects Created</div>
+          </div>
+          <div className="p-6 bg-white rounded-2xl shadow-lg border border-purple-100">
+            <div className="text-2xl font-black bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent">40%</div>
+            <div className="text-sm text-gray-600 font-semibold">Score Improvement</div>
+          </div>
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ import LatestNewsSection from "./components/LatestNewsSection.jsx";
 import SuccessStoriesSection from "./components/SuccessStoriesSection.jsx";
 import DownloadPDFSection from "./components/DownloadPDFSection.jsx";
 import TechSpecsSection from "./components/TechSpecsSection.jsx";
+import WhatIsLeelaSection from "./components/WhatIsLeelaSection.jsx";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <FeaturesSection />
       <TechSpecsSection />
       <ProductsSection />
+      <WhatIsLeelaSection />
       <LatestNewsSection />
       <SuccessStoriesSection />
       <DownloadPDFSection />
