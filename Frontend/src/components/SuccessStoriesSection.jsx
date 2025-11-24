@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
+
 const stories = [
   {
     id: 1,
@@ -328,3 +329,8 @@ export default function SuccessStoriesSection() {
     </section>
   );
 }
+
+
+
+
+

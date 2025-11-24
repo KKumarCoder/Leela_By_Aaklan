@@ -43,9 +43,7 @@ export function HeroCarousel() {
         <h2 className="text-2xl font-bold mb-2">
           {slides[currentSlide].title}
         </h2>
-        <p className="text-gray-600 mb-6">
-          {slides[currentSlide].subtitle}
-        </p>
+        <p className="text-gray-600 mb-6">{slides[currentSlide].subtitle}</p>
 
         <div className="flex items-center justify-center gap-4">
           <button

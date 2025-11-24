@@ -10,6 +10,7 @@ import SuccessStoriesSection from "../components/SuccessStoriesSection.jsx";
 import TechSpecsSection from "../components/TechSpecsSection.jsx";
 import WhatIsLeelaSection from "../components/WhatIsLeelaSection.jsx";
 import DownloadPDFSection from "../components/DownloadPDFSection.jsx";
+import About_Leela_Details from "./About_Leela_Details.jsx";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <TechSpecsSection />
       <SuccessStoriesSection />
       <DownloadPDFSection />
+      <About_Leela_Details />
     </>
   );
 }
